@@ -52,6 +52,7 @@ class ChatMessage extends StatelessWidget {
           CurvedAnimation(parent: animationController, curve: Curves.easeOut),
       axisAlignment: 0.0,
       child: Container(
+        decoration: BoxDecoration(color: Colors.grey[200]),
         margin: const EdgeInsets.symmetric(vertical: 10.0),
         child: Row(
           children: [
@@ -161,24 +162,33 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         title: const Text('FriendlyChat'),
         elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
       ),
-      body: Column(
-        children: [
-          Flexible(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(8.0),
-              reverse: true,
-              itemBuilder: (_, index) => _messages[index],
-              itemCount: _messages.length,
+      body: Container(
+        child: Column(
+          children: [
+            Flexible(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(8.0),
+                reverse: true,
+                itemBuilder: (_, index) => _messages[index],
+                itemCount: _messages.length,
+              ),
             ),
+            const Divider(height: 1.0),
+            Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+              ),
+              child: _buildTextComposer(),
+            )
+          ],
+        ),
+        decoration: Theme.of(context).platform == TargetPlatform.iOS
+          ? BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Colors.grey[200]!),
           ),
-          const Divider(height: 1.0),
-          Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-            ),
-            child: _buildTextComposer(),
-          )
-        ],
+        )
+            : null,
       ),
     );
   }
