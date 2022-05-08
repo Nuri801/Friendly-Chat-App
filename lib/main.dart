@@ -130,7 +130,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                 },
                 onSubmitted: _isComposing ? _handleSubmitted : null,
                 decoration: const InputDecoration.collapsed(
-                    hintText: 'Do not type'),
+                    hintText: 'Type your message here'),
                 focusNode: _focusNode,
               ),
             ),
