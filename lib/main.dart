@@ -9,7 +9,7 @@ void main() {
 }
 
 final ThemeData kIOSTheme = ThemeData(
-  primarySwatch: Colors.orange,
+  primarySwatch: Colors.red,
   primaryColor: Colors.grey[100],
 );
 
@@ -130,7 +130,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                 },
                 onSubmitted: _isComposing ? _handleSubmitted : null,
                 decoration: const InputDecoration.collapsed(
-                    hintText: 'Type your message hereS'),
+                    hintText: 'Type your message here'),
                 focusNode: _focusNode,
               ),
             ),
