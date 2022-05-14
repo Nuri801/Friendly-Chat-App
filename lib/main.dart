@@ -9,12 +9,12 @@ void main() {
 }
 
 final ThemeData kIOSTheme = ThemeData(
-  primarySwatch: Colors.red,
+  primarySwatch: Colors.orange,
   primaryColor: Colors.grey[100],
 );
 
 final ThemeData kDefaultTheme = ThemeData(
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey)
       .copyWith(secondary: Colors.orangeAccent[400]),
 );
 
